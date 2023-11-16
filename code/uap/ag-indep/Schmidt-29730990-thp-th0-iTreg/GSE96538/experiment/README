@@ -1,0 +1,2 @@
+source 01-prefetch-SRR.sh
+source 02-fastq-dump.sh

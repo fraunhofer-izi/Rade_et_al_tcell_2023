@@ -1,0 +1,54 @@
+---
+title: "Build annotables"
+date: "`r Sys.Date()`"
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, message=FALSE}
+library(biomaRt)
+library(yaml)
+library(rlang)
+library(dplyr)
+
+path = "code/R/annotables"
+```
+
+```{r functions}
+get_data <- function(recipe) {
+    message(recipe$dataset)
+    # mart <- useMart(recipe$biomart, recipe$dataset, recipe$host)
+    mart <- useMart(recipe$biomart, recipe$dataset)
+    attr <- unlist(recipe$attributes, use.names = FALSE)
+    getBM(attr, mart = mart)
+}
+
+tidy_data <- function(df, recipe) {
+    df %>%
+        as_tibble %>%
+        distinct %>%
+        rename(!!!syms(recipe$attributes)) %>%
+        arrange(!!sym("ensgene"))
+}
+```
+
+```{r load_recipes}
+recipe.files <- file.path(path, "recipes") %>%
+    dir(full.names = TRUE)
+names(recipe.files) <- sub(".yml", "", basename(recipe.files))
+
+# Choose recipe
+recipe.files = recipe.files[names(recipe.files) == "grch37"]
+recipes = lapply(recipe.files, yaml.load_file)
+
+```
+
+```{r gene_annotation_tables}
+# download gene tables
+genetables <- lapply(recipes, get_data)
+
+# tidy gene tables
+genetables <- base::Map(tidy_data, genetables, recipes)
+
+saveRDS(genetables[[1]], file = paste0(path, "/data/", names(genetables)[1], ".Rds"))
+```

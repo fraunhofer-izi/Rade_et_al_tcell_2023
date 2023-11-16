@@ -1,0 +1,119 @@
+homes:  "~/projects/2018-MAVO-MCF/"
+workdata:  "data/work/2018-MAVO-MCF/"
+uap:  "data/work/uap_out/2018-MAVO-MCF/"
+rawdata:  "data/rawdata/2018-MAVO-MCF/"
+
+# gencode v29
+gencode_v19:  "annotations/hg19/gencode_v19/gencode.v19.annotation.gtf"
+gencode_v19_features:  "annotations/hg19/gencode_v19/gencode.v19.annotation.features.Rds"
+gencode_v29:  "annotations/hg38/gencode_v29/gencode.v29.annotation.gtf"
+gencode_v29_features:  "annotations/hg38/gencode_v29/gencode.v29.annotation.features.Rds"
+gencode_v29_features_tx:  "annotations/hg38/gencode_v29/gencode.v29.annotation.features.tx.Rds"
+gencode_v29_mapping:  "annotations/custom-CDF/HGU133A_Hs_GENCODEG_mapping.txt"
+annotable_grch38:  "code/R/annotables/data/grch38.Rds"
+annotable_grch37:  "code/R/annotables/data/grch37.Rds"
+
+## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+## RNA-Seq
+## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+phenodata_rnaseq:  "studies/kinetic-model/rna-seq/public/pheno-data/pheno-data.Rds"
+
+# UAP output MAIN (prefix: uap)
+tuomela_main:  "ag-indep/main-Tuomela-26967054-GSE52260-thp-th0-th17/"
+ullah_main:  "ag-indep/main-Ullah-29466736-GSE90569-thp-th0-iTreg/"
+schmidt_main:  "ag-indep/main-Schmidt-29730990-GSE94396-human-thp-th0-iTreg/"
+schmidt_ind_main:  "ag-indep/main-Schmidt-29730990-GSE96538-human-thp-th0-iTreg/"
+izi_thp_th0_main:  "2021-MAVO-MCF-CD3CD28-ReRun_1a43808e/uap-output/main/"
+
+# Counts
+htseq_counts_thp_thx:  "studies/kinetic-model/rna-seq/public/htseq-counts/htseq-counts.Rds"
+htseq_counts_izi_thp_th0:  "studies/kinetic-model/rna-seq/intern/thp-th0/htseq-counts/htseq-counts.Rds"
+
+eda_prep_thp_thx:  "studies/kinetic-model/rna-seq/public/eda-prep.Rds"
+
+## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+## RNA-Seq; DGE
+## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+limma_thp_th0:  "studies/kinetic-model/rna-seq/public/limma/eda-limma-thp-th0.Rds"
+limma_thp_th17:  "studies/kinetic-model/rna-seq/public/limma/eda-limma-thp-th17.Rds"
+limma_thp_itreg:  "studies/kinetic-model/rna-seq/public/limma/eda-limma-thp-itreg.Rds"
+limma_izi_thp_th0:  "studies/kinetic-model/rna-seq/intern/thp-th0/eda-limma.Rds"
+limma_izi_thp_th0_act:  "studies/kinetic-model/rna-seq/intern/thp-th0/eda-limma-act.Rds"
+limma_izi_ctrl:  "studies/kinetic-model/rna-seq/intern/thp-th0/eda-limma-ctrl.Rds"
+limma_izi_ctrl_ave:  "studies/kinetic-model/rna-seq/intern/thp-th0/eda-limma-ctrl-ave.Rds"
+limma_arcelus_cd4_th0:  "studies/kinetic-model/rna-seq/public/limma/eda-limma-arcelus.Rds"
+
+## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+## Microarray
+## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+phenodata_elo_thp_th0_th2:  "studies/kinetic-model/microarray/pheno-data/elo-thp-th0-th2/"
+phenodata_aijoe_thp_th0_th1_th2:  "studies/kinetic-model/microarray/pheno-data/aijö-thp-th0-th1-th2/"
+
+# CEL files download from NCBI GEO
+rawdata_elo_thp_th0_th2:  "Elo-20620947-GSE17974-thp-th0-th2"
+rawdata_aijoe_thp_th0_th1_th2:  "Aijö-23110343-GSE32959-thp-th0-th1-th2"
+
+affybatch_elo_thp_th2:  "studies/kinetic-model/microarray/eda-prep/elo-thp-th2-affybatch.Rds"
+affybatch_aijoe_thp_th1:  "studies/kinetic-model/microarray/eda-prep/aijö-thp-th1-affybatch.Rds"
+
+eda_prep_elo_thp_th2:  "studies/kinetic-model/microarray/eda-prep/elo-thp-th2-eda-prep.Rds"
+eda_prep_aijoe_thp_th1:  "studies/kinetic-model/microarray/eda-prep/aijö-thp_th1-eda-prep.Rds"
+
+plm_obj_elo_thp_th2:  "studies/kinetic-model/microarray/eda-prep/elo-thp-th2-plm-obj.Rds"
+plm_nuse_rle_elo_thp_th2:  "studies/kinetic-model/microarray/eda-prep/elo-thp-th2-plm-nuse-rle.Rds"
+array_images_elo_thp_th2:  "output/array-pseudo-images/elo-thp-th2"
+
+plm_obj_aijoe_thp_th1:  "studies/kinetic-model/microarray/eda-prep/aijö-thp-th1-plm-obj.Rds"
+plm_nuse_rle_aijoe_thp_th1:  "studies/kinetic-model/microarray/eda-prep/aijö-thp-th1-plm-nuse-rle.Rds"
+array_images_aijoe_thp_th1:  "output/array-pseudo-images/aijö-thp-th1/"
+
+## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+## Microarray; DGE
+## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+limma_elo_thp_th2:  "studies/kinetic-model/microarray/limma/elo-thp-th2.Rds"
+limma_aijoe_thp_th1:  "studies/kinetic-model/microarray/limma/aijö-thp-th1.Rds"
+
+## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+## Meta-analysis
+## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+meta_all: "studies/kinetic-model/meta-analysis/meta_res.Rds"
+meta_objects: "studies/kinetic-model/meta-analysis/meta_res_objects.Rds"
+meta_se: "studies/kinetic-model/meta-analysis/se_normalized.Rds"
+meta_se_w_izi: "studies/kinetic-model/meta-analysis/se_normalized_w_izi.Rds"
+meta_se_w_izi_arcelus: "studies/kinetic-model/meta-analysis/se_normalized_w_izi_arcelus.Rds"
+meta_effect_sizes_all: "studies/kinetic-model/meta-analysis/meta_effect_sizes_all.Rds"
+
+## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+## RNA-Seq; NMF
+## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+nmf_limma_izi_thp_th0_evo:  "studies/kinetic-model/rna-seq/intern/thp-th0/nmf/nmf-limma-evo.Rds"
+nmf_limma_izi_thp_th0_all:  "studies/kinetic-model/rna-seq/intern/thp-th0/nmf/nmf-limma-evo-all.Rds"
+nmf_limma_izi_thp_th0_all_pre:  "studies/kinetic-model/rna-seq/intern/thp-th0/nmf/nmf-limma-evo-all_pre.Rds"
+
+nmf_limma_th0_evo: "studies/kinetic-model/rna-seq/public/nmf/nmf-limma-th0-evo.Rds"
+nmf_limma_th17_evo: "studies/kinetic-model/rna-seq/public/nmf/nmf-limma-th17-evo.Rds"
+nmf_limma_iTreg_evo: "studies/kinetic-model/rna-seq/public/nmf/nmf-limma-itreg-evo.Rds"
+nmf_limma_arcelus_evo: "studies/kinetic-model/rna-seq/public/nmf/nmf-limma-arcelus-evo.Rds"
+nmf_limma_arcelus_evo_pre: "studies/kinetic-model/rna-seq/public/nmf/nmf-limma-arcelus-evo_pre.Rds"
+
+nmf_th0_d: "studies/kinetic-model/deco-th0/nmf-limma-th0-d.Rds"
+nmf_th0_v: "studies/kinetic-model/deco-th0/nmf-limma-th0-v.Rds"
+nmf_th0_pan: "studies/kinetic-model/deco-th0/nmf-limma-th0-pan.Rds"
+nmf_th0_merged: "studies/kinetic-model/deco-th0/nmf-limma-th0-merged.Rds"
+
+## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+## Microarray; NMF
+## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+nmf_elo_thp_th2_evo:  "studies/kinetic-model/microarray/nmf/nmf-elo-thp-th2-evo.Rds"
+nmf_aijoe_thp_th1_evo:  "studies/kinetic-model/microarray/nmf/nmf-aijö-thp-th1-evo.Rds"
+
+## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+## Decomposition results
+## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+pipeline_discovery: "studies/kinetic-model/deco-results/pipeline_discovery.Rds"
+pipeline_verification_v1: "studies/kinetic-model/deco-results/pipeline_verification_v1.Rds"
+pipeline_verification_v2: "studies/kinetic-model/deco-results/pipeline_verification_v2.Rds"
+
+signatures_discovery: "studies/kinetic-model/deco-results/signatures_discovery.Rds"
+signatures_all: "studies/kinetic-model/deco-results/signatures_all.Rds"
+timepoints_cutoff_v2: "studies/kinetic-model/deco-results/cutoff_v2.Rds"

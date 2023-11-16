@@ -1,0 +1,8 @@
+## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+PMID: 29466736; GSE90569; Aalto University
+## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Coord blood; Illumina HiSeq 2500; poly RNA; TruSeq Stranded mRNA Sample Preparataion *
+3 biological replicates; Human
+  all paired, 101nt
+
+* Why they use HTSeq-count with parameters --stranded no ?

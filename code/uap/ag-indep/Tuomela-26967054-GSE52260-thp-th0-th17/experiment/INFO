@@ -1,0 +1,9 @@
+## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[1] PMID: 26967054; GSE52260; Aalto University
+## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Cord blood; HiSeq 2000; total-RNA; TruSeq version 1/2?; no info about strandness
+3 biological replicates; Human
+	rep 1: paired, 75nt (they take only fwd read and truncated to 50nt)
+	rep 2 & 3: single, 50nt
+3 biological replicates; Mouse
+	all single, 50nt
