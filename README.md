@@ -1,4 +1,4 @@
-# Grieb_et_al_2023
+# Rade_et_al_tcell_2023
 
 This repository contains code used to produce the results in: Michael Rade, Sebastian Böhlen, Vanessa Neuhaus, Dennis Löffler, Conny Blumert, Ulrike Köhl, Susann Dehmel, Katherina Sewald, and Kristin Reiche, A time-resolved meta-analysis of consensus gene expression profiles during human T-cell activation, May 2023, PREPRINT (Version 1) available at [biorxiv](https://www.biorxiv.org/content/10.1101/2023.05.03.538418v1)
 
