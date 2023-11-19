@@ -90,11 +90,6 @@ cd4.sgntrs$v1_pass[is.na(cd4.sgntrs$v1_pass)] = FALSE # entweder nicht signifika
 
 v1.sgntrs = cd4.sgntrs[cd4.sgntrs$v1_pass == T, ]
 
-table(cd4.sgntrs$CLUSTER)
-dim(cd4.sgntrs)
-table(v1.sgntrs$CLUSTER)
-dim(v1.sgntrs)
-length(v1.sgntrs$CLUSTER)
 
 # tmp = v1.sgntrs
 cd4.sgntrs[cd4.sgntrs$GENE_SYMBOL %in% c("TNFRSF9"), ]
