@@ -168,24 +168,6 @@ rev.c.pl =
       min.segment.length = 0
     )
 
-# l = list()
-# for (i in names(meta.in)) {
-#   df = votecount_mv(meta.in[[i]])
-#   df = df %>% dplyr::select(GENE_SYMBOL, ddeg, ndeg)
-#   df$HOURS = i
-#   l[[i]] = df
-# }
-# df = do.call("rbind", l)
-# df.sub = df[df$ndeg > 0, ]
-# df.sub$GENE_SYMBOL = paste0(df.sub$GENE_SYMBOL, "_", df.sub$HOURS)
-# df.sub = split(df.sub, df.sub$ddeg)
-# df.sub = lapply(df.sub, function(x){
-#   x$GENE_SYMBOL
-# })
-# m = make_comb_mat(df.sub)
-# UpSet(m, top_annotation = upset_top_annotation(m, add_numbers = TRUE),
-#       right_annotation = upset_right_annotation(m, add_numbers = TRUE))
-
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # Vote-counting
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -349,48 +331,3 @@ ggsave(
   bg = "white",
   units = "mm"
 )
-
-# # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-# # Thesis
-# # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-# l = list()
-# for (i in naturalsort(unique(tops$GROUP))) {
-#   tops.gr = subset(tops, GROUP == i)
-#   tops.gr = tops.gr[order(abs(tops.gr$confect), decreasing = T), ]
-#   l[[i]] = head(tops.gr, 5)
-#  i
-# }
-#
-# tops.sub = do.call("rbind", l)
-# forst.pl = lapply(1:nrow(tops.sub), function(j) {
-#   hr = tops.sub$GROUP[j]
-#   hr = gsub("\\.", "", hr)
-#
-#   ftr = meta.res.obj[[hr]][[tops.sub$GENE_SYMBOL[j]]]
-#
-#   meta_data = NULL
-#   x.max = NULL
-#   title = NULL
-#   meta_data = ftr %>%
-#     broom::tidy(conf.int = T, exponentiate = F, include_studies = T) %>%
-#     dplyr::rename(study = term)
-#   meta_data$study[meta_data$study == "overall"] = "Overall"
-#   meta_data$weight = c(stats::weights(ftr), 100)
-#
-#   meta_data$sec_axis = paste0(round(meta_data$weight, 2), "% ")
-#   meta_data$study[meta_data$study == "Overall"] = "RE model"
-#
-#   x.max = max(abs(c(meta_data$conf.low, meta_data$conf.high)))
-#   title = paste0(tops.sub$GENE_SYMBOL[j], "; ", hr)
-#
-#   pl = forest_plots(.meta.data = meta_data,.x.max =  x.max, .title = title,
-#                     .re.col = "black", .base.size = 5, .range = c(.5, 2), .err.lwd = .2)
-#   pl = pl + xlab("Combined effect size")
-#   return(pl)
-# })
-# plot_grid(plotlist = forst.pl, nrow = 2)
-
-
-
-
-

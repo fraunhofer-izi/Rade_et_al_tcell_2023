@@ -283,6 +283,7 @@ z_score = function(z) {
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # Vote-counting stats
+# Modified version from https://github.com/csbl-usp/MetaVolcanoR
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 votecount_mv <- function(diffexp = list(),
                          foldchangecol = "logFC",
@@ -359,7 +360,7 @@ cum_freq_data <- function(meta_diffexp, nstud) {
 }
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-# Topconfectsplot
+# Topconfects plot
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 topconfect_plot = function(confects, limits=NULL) {
 
@@ -557,7 +558,7 @@ mg_tops = function(.obj, .meta.study, .u.cl, .ftrs.ave, .metafor.res, .ntop, .co
 }
 
 ## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-## cnetplot form Clusterprofiler (modified)
+## cnetplot function from Clusterprofiler (modified)
 ## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # convert a list of gene IDs to igraph object.
 list2graph <- function(inputList) {
@@ -805,54 +806,5 @@ normalize_vector <- function(x, method = "scale", n_ranks = 10000) {
     x.scale <- (x - x.min)/(x.max - x.min)
   }
   return(x.scale)
-}
-
-# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-# Information Coefficient [IC]
-# https://github.com/yanwu2014/swne
-# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-# Compute Information Coefficient [IC]
-# Pablo Tamayo Dec 30, 2015
-#
-# @param x Input vector x
-# @param y Input vector y
-# @param n.grid Gridsize for calculating IC
-#
-# @return Mutual information between x and y
-#
-
-MutualInf <-  function(x, y, n.grid = 100) {
-  x.set <- !is.na(x)
-  y.set <- !is.na(y)
-  overlap <- x.set & y.set
-
-  x <- x[overlap] +  0.000000001*runif(length(overlap))
-  y <- y[overlap] +  0.000000001*runif(length(overlap))
-
-  if (length(x) > 2) {
-    delta = suppressWarnings(c(MASS::bcv(x), MASS::bcv(y)))
-    rho <- cor(x, y)
-    rho2 <- abs(rho)
-    delta <- delta*(1 + (-0.75)*rho2)
-    kde2d.xy <- MASS::kde2d(x, y, n = n.grid, h = delta)
-    FXY <- kde2d.xy$z + .Machine$double.eps
-    dx <- kde2d.xy$x[2] - kde2d.xy$x[1]
-    dy <- kde2d.xy$y[2] - kde2d.xy$y[1]
-    PXY <- FXY/(sum(FXY)*dx*dy)
-    PX <- rowSums(PXY)*dy
-    PY <- colSums(PXY)*dx
-    HXY <- -sum(PXY * log(PXY))*dx*dy
-    HX <- -sum(PX * log(PX))*dx
-    HY <- -sum(PY * log(PY))*dy
-    PX <- matrix(PX, nrow=n.grid, ncol=n.grid)
-    PY <- matrix(PY, byrow = TRUE, nrow=n.grid, ncol=n.grid)
-    MI <- sum(PXY * log(PXY/(PX*PY)))*dx*dy
-    IC = MI
-    IC <- sign(rho) * sqrt(1 - exp(- 2 * MI))
-    if (is.na(IC)) IC <- 0
-  } else {
-    IC <- 0
-  }
-  return(IC)
 }
 

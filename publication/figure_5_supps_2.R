@@ -324,22 +324,6 @@ ora_plot = function(ora.obj, .run = "go") {
   t.lvls = c("6h", "12h", "24h", "48h", "72h")
   res.df$CTRST = factor(res.df$CTRST, t.lvls)
 
-  # facet.lbls = c("Act.\n(up)", "Act.\n(down)", "Neg. control")
-  # names(facet.lbls) = c("ACT_UP", "ACT_DWN", "CTRL_ALL")
-  # facet.lbls = c("Act.", "Neg. control", "INT")
-  # names(facet.lbls) = c("ACT", "CTRL_ALL", "INT")
-
-  # facet.lbls = c(
-  #   "Act.\n(up)", "Act.\n(down)",
-  #   "Neg.ctrl.\n(up)", "Neg.ctrl\n(down)",
-  #   "Act. and Neg.ctrl.\n(down)", "Act. and Neg.ctrl.\n(up)", "Act. and Neg.ctrl.\n(diff)"
-  # )
-  # names(facet.lbls) = c(
-  #   "ACT_UP", "ACT_DWN",
-  #   "CTRL_UP", "CTRL_DWN",
-  #   "INT_DWN", "INT_UP", "INT_DIFF"
-  # )
-
   facet.lbls = c(
     "Act.\n(up)", "Act.\n(down)",
     "Neg.ctrl.\n(up)", "Neg.ctrl\n(down)"
@@ -424,8 +408,6 @@ ora_plot = function(ora.obj, .run = "go") {
   pl
 }
 
-# ora.obj.go = readRDS("enrichment_analysis/figure_5_supps_ora_go_act_neg_ctrl.rds")
-# ora.obj.reactome = readRDS("enrichment_analysis/figure_5_supps_ora_reactome_act_neg_ctrl.rds")
 ora.obj.go = readRDS("enrichment_analysis/figure_5_supps_ora_go_act_neg_ctrl_comb.rds")
 ora.obj.reactome = readRDS("enrichment_analysis/figure_5_supps_ora_reactome_act_neg_ctrl_comb.rds")
 

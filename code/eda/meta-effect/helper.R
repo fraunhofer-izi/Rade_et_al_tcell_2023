@@ -33,7 +33,8 @@ z_score = function(z) {
 }
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-# Calc combined effect size
+# combined effect size
+# Modified version from https://github.com/csbl-usp/MetaVolcanoR
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 comb_effect = function(.obj = list(), .geneID = "ENSEMBL_ID",
                     .effectSize = "hedges.eb",  .se = "se.eb", .ncores = 1,

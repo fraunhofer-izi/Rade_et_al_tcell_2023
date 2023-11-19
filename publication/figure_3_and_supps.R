@@ -304,11 +304,6 @@ gr = plot_grid(
   plot_grid(exp.pr.th1, top.th1, ncol = 1, rel_heights= c(r1, r2)),
   ncol = 5, scale = .99
 )
-# gr = exp.pr.th0 / top.th0 + plot_layout(heights  = c(r1, r2)) |
-#   exp.pr.th17 / top.th17 + plot_layout(heights  = c(r1, r2)) |
-#   exp.pr.itreg / top.itreg + plot_layout(heights  = c(r1, r2)) |
-#   exp.pr.th2 / top.th2 + plot_layout(heights  = c(r1, r2)) |
-#   exp.pr.th1 / top.th1  + plot_layout(heights  = c(r1, r2))
 
 gr =
   ggdraw(add_sub(gr, "Log2 fold change", size = 8, y = 1, vpadding = grid::unit(.25, "lines")))
